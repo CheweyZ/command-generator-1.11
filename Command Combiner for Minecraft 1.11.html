@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Command Combiner for Minecraft 1.11</title>
+		<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
+		<script src="./Command Combiner for Minecraft 1.11_files/jquery.min.js"></script>
+		
+      
+		<meta name="description" content="The best generator for creating complex machines with one command! Supports encasing within a box, signs, and 20hz clocks, all automatically!">
+		<meta name="keywords" content="to,one,command,command combiner,minecraft,generator,clock,only one command,filter,mcedit,1.9,1.10,1.11">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="./Command Combiner for Minecraft 1.11_files/css" rel="stylesheet" type="text/css">
+	    <link href="./Command Combiner for Minecraft 1.11_files/css(1)" rel="stylesheet" type="text/css">
+	    <link rel="stylesheet" href="./Command Combiner for Minecraft 1.11_files/jquery-ui.theme.css">
+
+	    <style>#generate:hover {background-color: #95ADD2; border-bottom: 1px solid #6789BD; margin-top: 22px; cursor: pointer; } #generate {margin-top: 20px; margin-bottom: 10px; padding: 5px; background-color: #B2CDF7; width: 180px; margin-left: auto; margin-right: auto; border-radius: 4px; border: 1px solid #6789BD; border-bottom: 3px solid #6789BD; }body{text-align:center}h1{margin-top:80px;font-family:'Ubuntu';font-size:2em;font-weight:700;color:#fff;text-shadow:2px 2px #022e6d}h2{margin-top:6px;color:#CFCFCF;font-size:1.4em;margin-bottom:5px;}.content-container{background-color:#fff;padding:10px;border-radius:10px;border:1px solid gray;margin:15px;margin-top:10px;max-width:800px;margin-left:auto;margin-right:auto}.output-command{margin-top:4px;background-color:#E6E6E6;display:none;border-radius:5px;max-width:95%;width:50%;height:50px;margin-top:10px}.output-stats{color:#5C5C5C}.title{font-family:'Ubuntu';font-size:24px;margin-left:15px;color:#1474d5;padding:5px;border-bottom:1px solid gray;text-align:left;padding-top:-10px}#input-commands{overflow:auto;resize:both;background-color:#fff;text-align:left;margin-left:auto;margin-right:auto;font-size:16px;border-color:#ccc;border-style:solid;padding:5px;border-width:1px;border-radius:10px;max-width:95%;width:810px;min-width:400px;font-family:'Roboto';height:300px;margin-bottom:15px}#input-commands:focus{outline:none}.subcategory{margin:10px;background-color:#ECECEC;padding-bottom:10px;width:200px;overflow:hidden;border-radius:4px;display:inline-block;text-align:left;vertical-align:top}.sub-name{width:100%;background-color:#1474d5;padding:4px 0;margin-bottom:8px;color:#fff;font-family:'Roboto';text-align:center}.option-checkbox{margin-top:5px;margin-bottom:5px;margin-left:15px}.option-box-text{margin-left:10px}#option-box-enable-text{margin-bottom:10px}#option-box-limit-slider{width:98%;margin-top:8px}#option-box-limit-slider-display{float:right;margin-right:10px;margin-top:3px}#output-command-title{margin-top:10px;margin-top:5px}.help-button,#add-sign,.remove-sign{font-family:'Ubuntu';font-size:16px;padding:2px;display:inline-block;margin-left:5px;margin-right:5px;margin-top:8px;background-color:#E8E8E8;border:1px solid #DADADA;border-radius:2px;width:180px}.help-button:hover,#add-sign:hover,.remove-sign:hover{background-color:#CECECE;border:1px solid silver;cursor:pointer}.help-container{display:none;width:90%;padding:5px;background-color:#ECECEC;border:1px solid #DCDCDC;border-radius:3px;overflow:hidden;margin:15px 5% 5px}.help-container p{width:50%;margin-left:auto;margin-right:auto}.help-function-container{width:95%;padding:5px;background-color:#fff;border-radius:5px;border:1px solid #DADADA;margin:20px auto}.help-title{font-family:'Ubuntu';font-size:17px;width:101%;margin-left:-5px;margin-top:-5px;padding:4px;background-color:#DCDCDC}.help-function{line-height:25px;font-family:'Ubuntu';font-size:17px;background-color:#1474d5;padding:2px 5px;border-radius:4px;color:#fff}.help-function-title{width:30%;text-align:center;border-bottom:1px solid #DADADA;padding:2px;margin-bottom:15px;margin-left:auto;margin-right:auto}.help-function-examples{margin-top:5px}.help-function-parameter{color:#FFD6AC}.help-function-parameter-1{color:#ACEAAC}.help-function-parameter-2{color:#FF9292}.help-function-example-text{padding:2px;background-color:#E6E6E6;width:86%;margin-left:auto;margin-right:auto;border-radius:3px}.help-how-to-p-container p{width:90%;margin-left:auto;margin-right:auto}.case-blocks-textbox{border-radius:3px;border:1px solid #D4D4D4;padding:2px;font-family:'Roboto'}#add-sign{margin-bottom:10px}.sign-item{margin:10px;background-color:#E6E6E6;border:1px solid #D4D4D4;border-radius:4px;padding:6px}.sign-item input{border-radius:3px;border:1px solid #D4D4D4;padding:2px;font-family:'Roboto';margin:2px}.remove-sign{background-color:#FFBABA}.remove-sign:hover{background-color:#E6A7A7}.option-label-left{margin-left:12px;margin-top:10px}#option-box-y-height{margin-left:12px;margin-top:5px;width:35px}#output-errors{display:none;background-color:#FFA3A3;border:1px solid #CF8484;border-radius:4px;padding:7px;font-family:'Roboto';font-size:16px;width:60%;margin:15px auto 10px}#output-notifications{display:none;background-color:#D3D6FF;border:1px solid #9FA2C3;border-radius:4px;padding:7px;font-family:'Roboto';font-size:16px;width:60%;margin:15px auto 10px}#ad-bottom{width:100%;text-align:center;margin-top:3px;margin-bottom:8px}#ad-below-signs{height:4%;width:70%;margin:10px 15% -5px}.help-link{text-decoration:none}.help-link:hover span{background-color:#1766B6}.italics{color:#454545;margin-top:2px;font-size:14px}.italics a{text-decoration:none;color:#4E76B2}.italics a:hover{text-decoration:underline}#input-instructions{pointer-events:none;margin-top:-280px;font-size:18px;color:gray;position:absolute;left:-50%;right:-50%}.twitter-follow-button{margin-left:30px}#footer-main{margin-top:400px}.offset-input{width:30px;display:inline}.sign-in-out-toggle{display:none;margin:0 auto}#sign-in-button{display:inline-block;vertical-align:middle}#sign-in-image{vertical-align:middle;padding:3px;z-index:10;position:relative;background-color:#ECECEC;border:1px solid #C5C5C5;border-radius:5px;overflow:hidden}#sign-out-container{width:110px;vertical-align:middle;margin-left:-20px;padding-left:25px;padding-top:3px;padding-bottom:3px;border:1px solid #C7C7C7;border-radius:4px;background-color:#F5F5F5;z-index:0}.sign-out-element{display:none}#signed-in{vertical-align:middle;display:none;width:180px;text-align:left;margin:12px 0 12px 15px}#sign-in-text{display:inline-block;vertical-align:middle;margin-left:15px;width:40%}#sign-in-container{margin-top:12px}.defaultbutton{font-family:'Ubuntu';font-size:16px;padding:2px;display:inline-block;margin-left:5px;margin-right:5px;margin-top:8px;background-color:#E8E8E8;border:1px solid #DADADA;border-radius:2px;width:180px}.defaultbutton:hover{background-color:#CECECE;border:1px solid silver;cursor:pointer}.project-subcat{padding:10px;width:90%;margin-left:auto;margin-right:auto;background-color:#EAEAEA;border-radius:4px}.button-white{background-color:#fff;padding:5px}.dialogue-box-container{z-index:1000;position:fixed;display:none}.page-fade{position:fixed;top:0;left:0;height:100%;width:100%;background-color:#000;opacity:.5}.dialogue-box{width:40%;min-width:600px;padding:10px;background-color:#fff;border-radius:8px;position:fixed;height:500px;top:50%;margin-top:-250px;border:1px solid #DFDFDF;right:0;left:0;margin-right:auto;margin-left:auto;width:40%;min-width:600px;padding:10px;background-color:#fff;border-radius:8px;position:fixed;margin-left:auto;margin-right:auto;height:500px;top:50%;margin-top:-250px;border:1px solid #DFDFDF}.exit{float:right;font-size:22px;color:#878787;margin-right:3px}.exit:hover{color:#9E9E9E;cursor:pointer}.copytext{background-color:#D6D6D6;border-radius:5px;border:1px solid #C1C1C1;width:80%;resize:none;height:200px}#export-textarea{margin-top:15px}#export-download{background-color:#DADADA;border:1px solid #B7B7B7}#export-download:hover{background-color:#B7B7B7}#export-help-container p{margin-top:5px;margin-bottom:5px}.export-subtitle{font-size:17px;font-weight:700}#export-help-container p.bigger{font-size:17px}.pastetext{background-color:#EEE;border-radius:5px;border:1px solid #C1C1C1;width:80%;resize:none;height:100px;margin-top:10px}.success-text{margin:8px;background-color:#C3FFC3;border:1px solid #86CE9D;text-align:center;border-radius:4px;padding:5px;display:none}.error-text{margin:8px;background-color:#FFE3E3;border:1px solid #D8A1A1;text-align:center;border-radius:4px;padding:5px;display:none}#project-container{background-color:#E2E5EC;border:1px solid #C1C8DC;border-radius:4px;margin-left:10px;padding-top:5px;padding-bottom:5px;display:none;width:70%;height:74px;vertical-align:middle}.showifsignedin{display:none}.project{width:113px;height:70px;display:inline-block;background-color:#c0cfe7;border:1px solid #7092be;border-radius:4px;margin-left:7px;overflow:hidden;-o-transition:.1s;-ms-transition:.1s;-moz-transition:.1s;-webkit-transition:.1s;transition:.1s}.project:hover{background-color:#D4DEEC;cursor:pointer}.showallprojects{background-color:#94ABCA;float:right;margin-right:5px}.showallprojects:hover{background-color:#D4DEEC}.project-name{font-size:16px;padding-top:5px;width:80%;text-align:center;display:inline-block;margin-left:5px;height:40px;overflow:hidden}.showallprojects .project-name{width:100%;margin:5px 0 0;height:17px}.project-ribbon{width:100%;background-color:#7092be;padding-top:3px;padding-bottom:3px;margin-top:1px;margin-bottom:4px;color:#fff;font-size:14px;clear:left;text-align:center}.project-remove{float:right;color:#7092be;margin-right:2px;margin-top:2px}.project-id,.project-jsonstring{display:none}.project-showall-icon{color:#c0cfe7;margin-left:43px}.save-dynamic-container{text-align:center}.save-dynamic-container .defaultbutton{background-color:rgba(52,62,185,0.3);border:1px solid rgba(114,118,165,0.65)}.save-dynamic-container .defaultbutton:hover{background-color:rgba(154,158,199,0.3)}.center{text-align:center}.showifsignedin.center{margin-top:8px;margin-bottom:5px}.neat-textinput{border:1px solid#D0D0D0;border-radius:4px;padding:8px;text-align:center}#save-input-name{margin-top:15px;width:300px;background-color:#f0f8ff}#project-none{text-align:center;margin-top:20px;color:#5D5C5C}.hidden{display:none}#rename-input{margin-top:10px}#sign-collapse{-o-transition:.3s;-ms-transition:.3s;-moz-transition:.3s;-webkit-transition:.3s;transition:.3s}#sign-collapse:hover{color:gray;cursor:pointer}.sign-collapse-rotate{-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=-1)}.redbutton{background-color:#FFD8D8;border:1px solid #D2AFAF}.redbutton:hover{background-color:#D2AFAF}#showall-projectholder{width:95%;height:410px;margin-left:auto;margin-right:auto;margin-top:10px;border:1px solid #9C9C9C;background-color:#EAEAEA;border-radius:5px;padding:8px;padding-top:16px;padding-bottom:16px;overflow-y:auto}.project.project-byuser.in-allprojects{margin:9px}.fa-default-button{color:#BFBFBF}.fa-save-button{color:#6C6E90}#upload-textfile input{opacity:0}#upload-hidden-button{display:none}.aboveall{z-index:1001;}#ignore-unbalanced {background-color: #F5D1D1; width: 200px; padding: 2px; margin: 0 auto; margin-top: 5px; border: 1px solid #C58484; border-radius: 3px; }#ignore-unbalanced:hover{background-color: #DEAFAF; cursor:pointer;}.sign-reorder{float: left;margin-top: 4px;margin-left: 5px;color: #8E8E8E;position: absolute;}.sign-reorder i:hover{color: #464646} .sign-reorder i{display:block;}#visitold{display: block;margin-bottom: 7px;color: #dfeef1;font-size: 17px;text-decoration: none;}#visitold:hover{text-decoration: underline;}</style>
+
+	
+	    <style>.abcRioButton{-webkit-border-radius:1px;border-radius:1px;-webkit-box-shadow 0 2px 4px 0px rgba(0,0,0,.25);box-shadow:0 2px 4px 0 rgba(0,0,0,.25);-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transition:background-color .218s,border-color .218s,box-shadow .218s;transition:background-color .218s,border-color .218s,box-shadow .218s;-webkit-user-select:none;-webkit-appearance:none;background-color:#fff;background-image:none;color:#262626;cursor:pointer;outline:none;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:auto}.abcRioButton:hover{-webkit-box-shadow:0 0 3px 3px rgba(66,133,244,.3);box-shadow:0 0 3px 3px rgba(66,133,244,.3)}.abcRioButtonBlue{background-color:#4285f4;border:none;color:#fff}.abcRioButtonBlue:hover{background-color:#4285f4}.abcRioButtonBlue:active{background-color:#3367d6}.abcRioButtonLightBlue{background-color:#fff;color:#757575}.abcRioButtonLightBlue:active{background-color:#eee;color:#6d6d6d}.abcRioButtonIcon{float:left}.abcRioButtonBlue .abcRioButtonIcon{background-color:#fff;-webkit-border-radius:1px;border-radius:1px}.abcRioButtonSvg{display:block}.abcRioButtonContents{font-family:Roboto,arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:.21px;margin-left:6px;margin-right:6px;vertical-align:top}.abcRioButtonContentWrapper{height:100%;width:100%}.abcRioButtonBlue .abcRioButtonContentWrapper{border:1px solid transparent}.abcRioButtonErrorWrapper,.abcRioButtonWorkingWrapper{display:none;height:100%;width:100%}.abcRioButtonErrorIcon,.abcRioButtonWorkingIcon{margin-left:auto;margin-right:auto}.abcRioButtonErrorState,.abcRioButtonWorkingState{border:1px solid #d5d5d5;border:1px solid rgba(0,0,0,.17);-webkit-box-shadow:0 1px 0 rgba(0,0,0,.05);box-shadow:0 1px 0 rgba(0,0,0,.05);color:#262626}.abcRioButtonErrorState:hover,.abcRioButtonWorkingState:hover{border:1px solid #aaa;border:1px solid rgba(0,0,0,.25);-webkit-box-shadow:0 1px 0 rgba(0,0,0,.1);box-shadow:0 1px 0 rgba(0,0,0,.1)}.abcRioButtonErrorState:active,.abcRioButtonWorkingState:active{border:1px solid #aaa;border:1px solid rgba(0,0,0,.25);-webkit-box-shadow:inset 0 1px 0 #ddd;box-shadow:inset 0 1px 0 #ddd;color:#262626}.abcRioButtonWorkingState,.abcRioButtonWorkingState:hover{background-color:#f5f5f5}.abcRioButtonWorkingState:active{background-color:#e5e5e5}.abcRioButtonErrorState,.abcRioButtonErrorState:hover{background-color:#fff}.abcRioButtonErrorState:active{background-color:#e5e5e5}.abcRioButtonWorkingState .abcRioButtonWorkingWrapper,.abcRioButtonErrorState .abcRioButtonErrorWrapper{display:block}.abcRioButtonErrorState .abcRioButtonContentWrapper,.abcRioButtonWorkingState .abcRioButtonContentWrapper,.abcRioButtonErrorState .abcRioButtonWorkingWrapper{display:none}.-webkit-keyframes abcRioButtonWorkingIconPathSpinKeyframes{0%{-webkit-transform:rotate(0)}} </style></head>
+	<body data-gr-c-s-loaded="true" style="">
+		<div class="content-container">
+			<div class="title" style="padding-top: 5px">Options</div>
+
+			<div class="subcategory" id="box-options">
+				<div class="sub-name">Encasing Options</div>
+				<input type="checkbox" id="option-box-encase" class="option-checkbox" onclick="optionEncaseChange()" checked=""><span class="option-label" id="option-box-enable-text">Enable casing</span><br>
+				<span class="option-box-case-input"><span class="option-label option-box-text">Case main block</span> <input type="text" id="option-box-encase-block-window" class="option-checkbox case-blocks-textbox" value="stained_glass 3"></span><br>
+				<span class="option-box-case-input"><span class="option-label option-box-text">Case top/bottom blocks</span> <input type="text" id="option-box-encase-block-caps" class="option-checkbox case-blocks-textbox" value="stained_hardened_clay 3"></span><br>
+			</div>
+
+			<div class="subcategory">
+				<div class="sub-name">Orientation</div>
+				<div style="height:25px"><span class="option-label option-box-text" id="option-box-enable-text">Structure Rotation</span>
+				<span id="option-box-limit-slider-display">
+					<select id="structure-orientation-input">
+						<option value="1">X+</option>
+						<option value="2">X-</option>
+						<option value="3">Z+</option>
+						<option value="4">Z-</option>
+					</select>
+				</span></div>
+				<center style="margin-top: 5px;margin-bottom:5px"><span class="option-label-left">Structure Offset:</span></center>
+				<center>
+					X: <input type="number" id="option-box-offset-x" class="case-blocks-textbox offset-input" value="0">
+					Y: <input type="number" id="option-box-offset-y" class="case-blocks-textbox offset-input" value="0">
+					Z: <input type="number" id="option-box-offset-z" class="case-blocks-textbox offset-input" value="0">
+				</center>
+				<div class="sub-name" style="margin-top:9px">Technical</div>
+				<input type="checkbox" id="option-hopper-clock" class="option-checkbox" onclick="optionHopperClockChange()"><span class="option-label" id="option-hopper-clock-text">Hopper Clock</span><br>
+        <input type="checkbox" id="option-compressor" class="option-checkbox" checked><span class="option-label" id="option-compressor">Compressor</span><br>
+				<!-- <input type='checkbox' id='option-server-signs' class='option-checkbox' onclick='optionServerSignsChange()'><span class='option-label' id='option-server-signs-text'>1.9 Server Signs</span><br> -->
+				<input type="checkbox" id="option-blockdata" class="option-checkbox" onclick="optionBlockdataChange()" checked=""><span class="option-label" id="option-blockdata-text">Use /blockdata</span><br>
+			</div>
+
+			<div class="subcategory">
+				<div class="sub-name">Structure Dimensions</div>
+				<center><span class="option-label-left">Box Length</span>&nbsp;<input style="width:36px" type="number" id="option-box-length-x" class="case-blocks-textbox" min="1" value="5"></center>
+				<center><span class="option-label-left">Box Width</span>&nbsp;&nbsp;<input style="width:36px;margin-top:8px" type="number" id="option-box-length-z" class="case-blocks-textbox" min="1" value="3"></center>
+				<div class="sub-name" style="margin-top:9px">Advanced</div>
+				<span class="option-box-case-input"><span class="option-label option-box-text">Unique Scoreboard Obj.</span> <input type="text" style="text-align:center" id="option-advanced-objectivename" class="option-checkbox case-blocks-textbox" min="1" max="14"></span><br>
+			</div>
+
+			<div class="title" style="margin-top: 5px">Signs <i class="fa fa-chevron-down" id="sign-collapse"></i></div>
+			<div id="sign-wrapper">
+				<div id="add-sign">Add Sign</div>
+				<div id="sign-container"></div>
+			</div>
+
+			<div class="title" style="margin-top: 5px" id="testtitle">Projects</div>
+			
+				<div id="projects-manual" class="project-subcat" style="margin-top: 10px">
+					<div id="manual-projects-text" class="manproj-text">You can also manually save this as a project to your computer<br>by exporting/importing with these buttons!</div>
+					<div id="manual-projects-button" class="defaultbutton button-white"><i class="fa fa-download fa-default-button"></i> Export to Computer</div>
+					<div id="manual-projects-import" class="defaultbutton button-white"><i class="fa fa-upload fa-default-button"></i> Import</div>
+					<div id="import-result" class="success-text">The project was successfully imported!</div>
+				</div>
+
+			<!-- Dialogue boxes beginning -->
+
+			<div id="export-container" class="dialogue-box-container">
+				<div class="page-fade"></div>
+				<div id="export-box" class="dialogue-box">
+					<div class="title">Export<span class="exit">X</span></div>
+					<textarea class="copytext" id="export-textarea" readonly="" onclick="this.focus();this.select()"></textarea>
+					<div class="help-function-container" id="export-help-container">
+						<p>To export your commands and settings as a project, you can either:</p>
+						<p><span class="export-subtitle">Copy:</span> One method of saving your project manually is to copy the text from above, and paste it into a safe place on your computer.</p>
+						<p><span class="export-subtitle">Download:</span> The other method of manual saving is to download a text file containg the project. To do so, click the 'download' button below.</p>
+						<div class="defaultbutton" id="export-download"><i class="fa fa-download"></i> Download</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="import-container" class="dialogue-box-container">
+				<div class="page-fade"></div>
+				<div id="import-box" class="dialogue-box">
+					<div class="title">Import<span class="exit">X</span></div>
+					<textarea class="pastetext" id="import-textarea" placeholder="Either paste your &quot;exported text&quot; here, or upload the .txt file below!"></textarea>
+					<div class="defaultbutton" id="import-done"><i class="fa fa-arrow-up"></i> Import</div>
+					<div class="help-function-container" id="import-help-container">
+						<p>To import a saved project, you can either:</p>
+						<p><span class="export-subtitle">Paste:</span> One method of importing your project manually is to paste the project text into the area above.</p>
+						<p><span class="export-subtitle">Upload:</span> The other method of manual saving is to upload the '.txt' file containg the project. To do so, click the 'upload' button below.</p>
+						<!-- Put upload button here -->
+						<div class="defaultbutton" id="upload-textfile"><i class="fa fa-folder-open-o"></i> <input id="upload-hidden-button" type="file">Upload</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="save-container" class="dialogue-box-container">
+				<div class="page-fade"></div>
+				<div id="save-box" class="dialogue-box" style="height:300px">
+					<div class="title">Save Project<span class="exit">X</span></div>
+					<input type="text" class="neat-textinput" id="save-input-name" placeholder="Project name">
+					<div class="help-function-container" id="save-help-container">
+						<p>Upon clicking "Save", your current commands, settings, and signs will be saved as a project on the server. You will be able to open this project under the "Projects" section.</p>
+						<div class="defaultbutton" id="save-done">Save</div>
+					</div>
+					<div class="error-text" id="save-error-text"></div>
+					<div class="success-text" id="save-success-text"></div>
+				</div>
+			</div>
+
+			<div id="rename-container" class="dialogue-box-container">
+				<div class="page-fade"></div>
+				<div id="rename-box" class="dialogue-box" style="height:300px">
+					<div class="title">Rename Current Project<span class="exit">X</span></div>
+					<input type="text" class="neat-textinput" id="rename-input" placeholder="New project name">
+					<div class="help-function-container" id="rename-help-container">
+						<p>Upon clicking "Rename", your current open project will be saved with the new name that you specified above. You will be still able to open this project under the "Projects" section.</p>
+						<div class="defaultbutton" id="rename-done">Rename</div>
+					</div>
+					<div class="error-text" id="rename-error-text"></div>
+					<div class="success-text" id="rename-success-text"></div>
+				</div>
+			</div>
+
+			<div id="delete-container" class="dialogue-box-container aboveall">
+				<div class="page-fade"></div>
+				<div id="delete-box" class="dialogue-box" style="height:210px">
+					<div class="title">Delete Project<span class="exit">X</span></div>
+					<div class="help-function-container" id="delete-help-container">
+						<p id="delete-text"></p>
+						<div class="defaultbutton redbutton" id="delete-done">Delete</div>
+					</div>
+					<div class="error-text" id="delete-error-text"></div>
+					<div class="success-text" id="delete-success-text"></div>
+				</div>
+			</div>
+
+			<div id="showall-container" class="dialogue-box-container">
+				<div class="page-fade"></div>
+				<div id="showall-box" class="dialogue-box">
+					<div class="title">All Projects<span class="exit">X</span></div>
+					<div class="showall-projectholder" id="showall-projectholder"><div class="project project-byuser in-allprojects"><div class="project-name">Base Cmd</div><i class="fa fa-times-circle project-remove"></i><div class="project-ribbon">0 Chars.</div><div class="project-id">4177</div><div class="project-jsonstring">{"cmds":"","settings":{"orientation":"1","offset":["0","0","0"],"dimensions":["5","3"],"casing":{"enabled":true,"caps":"barrier","sides":"barrier"},"scoreboard":"WuQq5X","signs":[[{"txt":"Destroy","clr":"red","bold":false,"italics":false,"underline":false,"command":"","destroy":true,"tog":false},{"txt":"Machine","clr":"red","bold":false,"italics":false,"underline":false,"command":""},{"txt":"","clr":"black","bold":false,"italics":false,"underline":false,"command":""},{"txt":"","clr":"black","bold":false,"italics":false,"underline":false,"command":""}],[{"txt":"Activate","clr":"aqua","bold":false,"italics":false,"underline":false,"command":"","destroy":false,"tog":true},{"txt":"Or","clr":"aqua","bold":false,"italics":true,"underline":false,"command":""},{"txt":"Deactivate","clr":"aqua","bold":false,"italics":false,"underline":false,"command":""},{"txt":"","clr":"black","bold":false,"italics":false,"underline":false,"command":""}],[{"txt":"Made","clr":"gold","bold":false,"italics":false,"underline":false,"command":"","destroy":false,"tog":false},{"txt":"By","clr":"gold","bold":false,"italics":false,"underline":false,"command":""},{"txt":"Cheweys","clr":"dark_red","bold":false,"italics":false,"underline":false,"command":""},{"txt":"Redstone","clr":"dark_red","bold":false,"italics":false,"underline":false,"command":""}]],"hopper":false,"svrsigns":false},"len":0}</div></div></div>
+					<div class="error-text" id="showall-error-text"></div>
+					<div class="success-text" id="showall-success-text"></div>
+				</div>
+			</div>
+
+			<!-- End of dialogue boxes -->
+
+			<div class="title" style="margin-top: 5px">Help</div>
+			<div id="help-show-functions" class="help-button">Show built in functions</div>
+			<div id="help-show-how-to" class="help-button">How to use</div>
+      <div id="help-show-compressor" class="help-button">Compressor <br /> code shortcuts</div>
+      <div id="help-compressor" class="help-container">
+        <div class="help-title">Compressor</div>
+        <p>
+          Below is some of the simple things you you use to make you code more readable which will then be compressed
+        </p>
+        <div class="help-function-container">
+          Prefixes
+        </div>
+        <div class="help-function-container">
+          How To use
+        </div>
+        <span class="help-function">stone variant<span class="help-function-parameter-1">type</span></span>
+        <div class="help-function-title help-function-examples">Examples</div>
+        <div class="help-function-example-text">
+          setblock ~ ~ ~ minecraft:stone variant=granite
+        </div>
+        <p>
+          Writing this would set the block to granite stone whilst allowing your code to be readble rather than numbers
+        </p>
+        <div class="help-function-title help-function-examples">What it works on</div>
+        <p>
+          All types shown above and it isnt case sensitive so what ever is best for you
+        </p>
+        <div class="help-function-example-text">
+          smooth_granite
+          smooth granite
+          polished granite
+          polished_granite
+        </div>
+        <p>
+          It supports both its real ingame name and it real command name the underscore is optional again for best readability while not case sensitive
+        </p>
+          <div class="help-function-title help-function-examples">Notes</div>
+          <p>
+            It works for all types defined above and in and circumstances you will this type of definition such as /execute, /fill, /setblock and /testforblock 
+             if you want to stick with the trend cobblestone is also supported if you use variant it will also be shrunk down to its number form making you code as minimal as possible
+          </p>
+      </div>
+      
+			<div id="help-built-in-functions" class="help-container">
+				<div class="help-title">Built in functions</div>
+				<p>
+					Below is a list of the built in functions. They can be used by entering them as a command in the command combiner below!<br>
+				</p>
+				<div class="help-function-container">
+					<div class="help-function-title">Initial (Commands that only run once)</div>
+					<span class="help-function">INIT:<span class="help-function-parameter-1">command</span></span>
+					<div class="help-function-title help-function-examples">Examples</div>
+					<div class="help-function-example-text">INIT:tellraw @a {"color":"red","text":"I'm only going to say this once!"}</div>
+					<p>Writing this would cause the tellraw command to only run once, when the user first runs the compacted command.</p>
+				</div>
+				<div class="help-function-container">
+					<div class="help-function-title">Command Block Modifiers</div>
+					<span class="help-function">R:<span class="help-function-parameter-1">command</span></span><br>
+					<span class="help-function">I:<span class="help-function-parameter-1">command</span></span>
+					<div class="help-function-title help-function-examples">Examples</div>
+					<div class="help-function-example-text">R:say I'm on my own repeating cycle!</div>
+					<p>The command above would be placed in a repeating command block, overriding whatever the command combiner would have originally made it by default.</p>
+					<div class="help-function-example-text">I:say I'm an impulse command block!</div>
+					<p>The command above would be placed in an impulse command block, which you can then activate by using the TAG feature (explained below).</p>
+				</div>
+				<div class="help-function-container">
+					<div class="help-function-title">Multi-line Modifiers</div>
+					<span class="help-function">/*<span class="help-function-parameter-2">modifiers</span></span><br>
+					<span class="help-function"><span class="help-function-parameter-1">command(s)</span></span><br>
+					<span class="help-function">*/</span>
+					<div class="help-function-title help-function-examples">Examples</div>
+					<div class="help-function-example-text">/*R:</div>
+					<div class="help-function-example-text">say 1</div>
+					<div class="help-function-example-text">say 2</div>
+					<div class="help-function-example-text">*/</div>
+					<p>Both of the '/say' commands would be placed in repeating command blocks</p>
+					<div class="help-function-example-text">/*INIT:/summon </div>
+					<div class="help-function-example-text">zombie</div>
+					<div class="help-function-example-text">creeper</div>
+					<div class="help-function-example-text">*/</div>
+					<p>Since '/summon' would be added before each command within the multi-line modifier, this would summon a zombie and a creeper</p>
+				</div>
+				<div class="help-function-container">
+					<div class="help-function-title">NBT in Entity Selectors</div>
+					<span class="help-function">nbt={<span class="help-function-parameter-1"> NBT DATA</span>}</span>
+					<div class="help-function-title help-function-examples">Examples</div>
+					<div class="help-function-example-text">execute @e[type=armor_stand,nbt={OnGround:1b}] ~ ~ ~ setblock ~ ~-1 ~ stone</div>
+					<p>Using this command in the command combiner would cause a stone block to be placed under any armor_stand which is standing on the ground.</p>
+				</div>
+				<div class="help-function-container">
+					<div class="help-function-title">Conditionals or IF / DO statements</div>
+					<span class="help-function">COND:(command)</span><br>or<br><span class="help-function">IF:<span class="help-function-parameter-1">command</span></span><br><span class="help-function">DO:<span class="help-function-parameter-1">command</span></span>
+					<div class="help-function-title help-function-examples">Examples (COND)</div>
+					<div class="help-function-example-text">testfor @a[m=1]</div>
+					<div class="help-function-example-text">COND:say A player is in creaive mode!</div>
+					<p>Using these 2 commands in the command combiner would cause the phrase "A player is in creative mode" to be printed to the chat only .lt least one player is in creative mode</p>
+					<div class="help-function-title help-function-examples">Examples (IF/DO)</div>
+					<div class="help-function-example-text">IF:testfor @a[m=1]</div>
+					<div class="help-function-example-text">DO:say A player is in creaive mode!</div>
+					<p>The two commands above would have the exact same outcome as the previous example. This is simply a different way to write it, which is easier to see the logic when reviewing your commands.</p>
+				</div>
+				<div class="help-function-container">
+					<div class="help-function-title">Coordinate Trackers</div>
+					<span class="help-function">TAG#(identifier):</span> and <span class="help-function">@TAG-(identifier)</span><br>or<br><span class="help-function">@prev</span>
+					<div class="help-function-title help-function-examples">Examples (TAG)</div>
+					<div class="help-function-example-text">TAG#3:say Hello</div>
+					<div class="help-function-example-text">setblock @TAG-3 dirt</div>
+					<p>If you wrote these commands in the command combiner, the "setblock" command would place a dirt block at the location of the "say Hello" command. This is useful when you need to access a certain command blocks coordinates from multiple other command blocks. (Especially useful for /stats)</p>
+					<div class="help-function-title help-function-examples">Examples (@prev)</div>
+					<div class="help-function-example-text">say Hello</div>
+					<div class="help-function-example-text">setblock @prev dirt</div>
+					<p>If you used these commands in the command combiner, it would essentially do the exact same thing as the previous example, except this one is much quicker to type, but it can only be used to target the command prior to the one referencing it.</p>
+				</div>
+				<div class="help-function-container">
+					<div class="help-function-title">Floor Crafting</div>
+					<span class="help-function">FloorCrafting: <span class="help-function-parameter">(ingredient 1)</span> <span class="help-function-parameter-1">(damage val)</span> <span class="help-function-parameter-2">(NBT - or {} if none)</span> <span class="help-function-parameter">(ingredient 2)</span> <span class="help-function-parameter-1">(damage val)</span> <span class="help-function-parameter-2">(NBT - or {} if none)</span> <span class="help-function-parameter"><b>RES:</b>(result item)</span> <span class="help-function-parameter-1">(damage val)</span> <span class="help-function-parameter-2">(NBT - or {} if none)</span> (scoreboard obj. name - optional)</span>
+					<div class="help-function-title help-function-examples">Examples</div>
+					<div class="help-function-example-text">FloorCrafting: grass 0 {display:{Name:"The Best Grass"}} stone 0 {} RES:diamond_sword 10 {display:{Name:"Magic Sword"}}</div>
+					<p>Using this in the command combiner would allow you to throw a grass block item and a stone block item together on the ground to create 1 diamond sword named "Magic Sword".</p>
+					<p>You can use as many ingredients and result items as you want, just make sure that ingredient items do not start with 'RES:', but result items do!</p>
+				</div>
+			</div>
+
+			<div id="help-how-to" class="help-container">
+				<div class="help-title">How to use the command combiner</div>
+				<div class="help-function-container">
+					<div class="help-function-title">Writing commands</div>
+					<p>If you are already familiar with command blocks, you should already be a master at using the command combiner! Simply write some commands, each on a new line in the large text field below. They will all be placed on a 20hz fill clock in the final command. If there is a command that you only want to run once, just write <span class="help-function-title help-function-examples">INIT:</span> before that command. This is mostly useful for adding scoreboard objectives and for /tellraw install messages.</p>
+					<div class="help-function-title help-function-examples">Examples</div>
+					<div class="help-function-example-text">INIT:/give @a stone 1</div>
+					<div class="help-function-example-text">/say test</div>
+					<p>If you were to write these 2 lines in the command combiner, it would give every player 1 stone upon install, then it would constantly spam the chat with "test", 20 times per second.</p>
+				</div>
+
+				<div class="help-function-container">
+					<div class="help-function-title">Comment lines</div>
+					<p>Comments are a very useful feature to help you organize your project. A line can be commented by placing a # before the line. The commented line will be ignored when the command is generated.</p>
+					<div class="help-function-title help-function-examples">Examples</div>
+					<div class="help-function-example-text"># Removes 1 from the score 'Ex' until it is at 0</div>
+					<div class="help-function-example-text">/scoreboard players remove @a[score_Ex_min=1] Ex 1</div>
+					<p>If you were to copy and paste those 2 lines into the command combiner, only the second one would appear in the final command. The commented line would be ignored.</p>
+				</div>
+			</div>
+
+			<div class="title" id="output-command-title">Output</div>
+			<div id="output-container"></div>
+			<div id="output-errors"></div>
+			<div id="output-notifications"></div>
+			<div id="generate">Generate</div>
+		</div>
+
+		<textarea id="input-commands" spellcheck="false" placeholder="Write your commands here! Each command should be on a new line! They will be combined into a single-command installer!">setblock ~ ~ ~ minecraft:stone variant=granite</textarea>
+<script src="./Command Combiner for Minecraft 1.11_files/compressor/compressor1.11.min.js"></script>
+<script src="./Command Combiner for Minecraft 1.11_files/generator_main.min.js"></script>
+	
+	</body>
+</html>
