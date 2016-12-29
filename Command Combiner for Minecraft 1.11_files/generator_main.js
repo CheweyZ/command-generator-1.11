@@ -308,6 +308,17 @@ $('#help-show-how-to').click(function() {
     }
 });
 
+$('#help-show-compressor').click(function() {
+    if (helpSelected !== 'compressor') {
+        $('.help-container').slideUp();
+        $('#help-compressor').slideDown();
+        helpSelected = 'compressor';
+    } else {
+        $('.help-container').slideUp();
+        helpSelected = 'none';
+    }
+});
+
 $('#help-show-others').click(function() {
     if (helpSelected !== 'others') {
         $('.help-container').slideUp();
