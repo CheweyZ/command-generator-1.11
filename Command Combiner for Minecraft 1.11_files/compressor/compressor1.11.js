@@ -56,6 +56,7 @@ function compressor(check) {
           }))
           return itemtype
         }))
+        
         current = current.replace(/((?=minecraft:stonebrick )((?!\s{2}).)+|(?=stonebrick )((?!\s{2}).)+)/gi, (function(a, b) {
             b = b.toLowerCase()
             //in event they ever update names
@@ -71,13 +72,13 @@ function compressor(check) {
                     itemtype = currentblock+' 2'
                     break;
                 case 'chiseled_stonebrick':
-                    itemtype = 'cracked_stonebrick'
+                    itemtype = stonebrick+' 3'
                     break;
                 default:
                     itemtype = 'stonebrick'
             }
             return itemtype
         }))
-        return current
+        return current.replace(/\s\s+/gi,'')
     })
 }
