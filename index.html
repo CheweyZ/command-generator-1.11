@@ -172,20 +172,20 @@
         <div class="help-function-container">
           Prefixes
         </div>
-        <a href="http://minecraft.gamepedia.com/Block_states">Here are the intended supported Prefix shortcuts</a>
+        <a href="http://minecraft.gamepedia.com/Block_states" target="_blank">Here are the intended supported Prefix shortcuts</a>
         <p>
           Due to the shear number it will take a while but if you want to help search the project on <a href="https://github.com/CheweyZ/command-generator-1.11" target="_blank">Github</a>
         </p>
         <div class="help-function-container">
-          How To use
+          How To Use
         </div>
-        <span class="help-function">stone variant<span class="help-function-parameter-1">type</span></span>
+        <span class="help-function">stone variant<span class="help-function-parameter-1"> type  </span></span>
         <div class="help-function-title help-function-examples">Examples</div>
         <div class="help-function-example-text">
           setblock ~ ~ ~ minecraft:stone variant=granite
         </div>
         <p>
-          Writing this would set the block to granite stone whilst allowing your code to be readble rather than numbers
+          Writing this would set the block to granite stone whilst allowing your code to be readble rather than numbers<br /><b>Its very important you do a double space after this says its the end of the parmeters</b>
         </p>
         <div class="help-function-title help-function-examples">What it works on</div>
         <p>
@@ -193,17 +193,15 @@
         </p>
         <div class="help-function-example-text">
           smooth_granite
-          smooth granite
-          polished granite
           polished_granite
         </div>
         <p>
-          It supports both its real ingame name and it real command name the underscore is optional again for best readability while not case sensitive
+          It supports both its real ingame name and it real command name while not case sensitive still
         </p>
           <div class="help-function-title help-function-examples">Notes</div>
           <p>
             It works for all types defined above and in and circumstances you will this type of definition such as /execute, /fill, /setblock and /testforblock 
-             if you want to stick with the trend cobblestone is also supported if you use variant it will also be shrunk down to its number form making you code as minimal as possible
+             if you want to stick with the trend cobblestone is also supported if you use variant it will also be compressed
           </p>
       </div>
       
@@ -315,7 +313,8 @@
 			<div id="generate">Generate</div>
 		</div>
 
-		<textarea id="input-commands" spellcheck="false" placeholder="Write your commands here! Each command should be on a new line! They will be combined into a single-command installer!">setblock ~ ~ ~ minecraft:stone variant=granite</textarea>
+		<textarea id="input-commands" spellcheck="false" placeholder="Write your commands here! Each command should be on a new line! They will be combined into a single-command installer!">setblock ~ ~ ~ minecraft:stone variant=granite 
+testfor @e[minecraft:stone variant=granite  ] ~ ~ ~ setblock ~ ~ ~ minecraft:stone variant=granite</textarea>
 <script src="./Command Combiner for Minecraft 1.11_files/compressor/compressor1.11.min.js"></script>
 <script src="./Command Combiner for Minecraft 1.11_files/generator_main.min.js"></script>
 	
