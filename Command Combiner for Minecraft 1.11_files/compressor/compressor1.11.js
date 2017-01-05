@@ -1,4 +1,5 @@
 function compressor(check) {
+    var activeblocks = Object.keys(activeprops)
     return check.map(function(current) {
         var itemtype
         var reply
@@ -8,7 +9,37 @@ function compressor(check) {
             // /stone ((?!\s{2}).)+
             //Onecondition 
             // /stone *variant=([^\s]*)/gi
+            //        var blockExistIn=activeblocks.indexOf()
 
+        //  activeblocks.forEach(function (checkingForBlock){
+        for (var i = 0; i < activeblocks.length; i++) {
+            activeBlockRegex = new RegExp("((?=minecraft:" + activeblocks[i] + " )((?!\s{2}).)+|(?=" + activeblocks[i] + " )((?!\s{2}).)+)", 'gi')
+            var blockFound = false
+            current.replace(activeBlockRegex, (function(a, b) {
+              console.log(activeBlockRegex);
+                console.log(b);
+                blockFound = true
+                var result=[]
+                var re=/(\w+)=(.+?)(?= \w+=|$)/gm; 
+                //var re=/([^=\s]+)=([^=\s]*(?:\s+[^=\s]+)*)(?!\S)/gm
+                while ((m = re.exec(b)) !== null) {
+                    if (m.index === re.lastIndex)
+                        re.lastIndex++;
+                    result.push(m[1]);
+                    result.push(m[2].replace(/\ .*/g,''));
+                }
+
+                console.log(result);
+                return b
+            }))
+            if (blockFound) {
+                break
+            }
+        }
+
+        return current
+
+        /*
         current = current.replace(/((?=minecraft:stone )((?!\s{2}).)+|(?=stone )((?!\s{2}).)+)/gi, (function(a, b) {
             b = b.toLowerCase()
             console.log(b);
@@ -80,5 +111,6 @@ function compressor(check) {
             return itemtype
         }))
         return current.replace(/\s\s+/gi,'')
+        */
     })
 }

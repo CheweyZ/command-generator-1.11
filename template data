@@ -1,0 +1,9 @@
+Expected values
+-->Input
+<--Output
+
+setblock ~ ~ ~ minecraft:stone variant=granite 
+setblock ~ ~ ~ stone 1
+
+testfor @e[minecraft:stone variant=granite  ] ~ ~ ~ setblock ~ ~ ~ minecraft:stone variant=granite
+testfor @e[minecraft:stone 1] ~ ~ ~ setblock ~ ~ ~ minecraft:stone 1
