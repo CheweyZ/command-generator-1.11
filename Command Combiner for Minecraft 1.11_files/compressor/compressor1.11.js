@@ -13,7 +13,7 @@ function compressor(check) {
 
         //  activeblocks.forEach(function (checkingForBlock){
         for (var i = 0; i < activeblocks.length; i++) {
-            activeBlockRegex = new RegExp("((?=minecraft:" + activeblocks[i] + " )((?!\s{2}).)+|(?=" + activeblocks[i] + " )((?!\s{2}).)+)", 'gi')
+            activeBlockRegex = new RegExp("((?=minecraft:" + activeblocks[i] + " )((?!\\\s{2}).)+|(?=" + activeblocks[i] + " )((?!\\\s{2}).)+)", 'gi')
             var blockFound = false
             current.replace(activeBlockRegex, (function(a, b) {
               console.log(activeBlockRegex);
